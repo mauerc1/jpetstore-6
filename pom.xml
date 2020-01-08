@@ -214,6 +214,22 @@
             </daemon>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.owasp</groupId>
+          <artifactId>dependency-check-maven</artifactId>
+          <version>${dependency.check.maven.version}</version>
+          <configuration>
+            <!-- <failBuildOnCVSS>${dependency.check.maven.failBuildOnCVSS}</failBuildOnCVSS> -->
+            <formats>HTML,XML</formats>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>check</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -247,6 +263,10 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.owasp</groupId>
+        <artifactId>dependency-check-maven</artifactId>
       </plugin>
     </plugins>
   </build>
@@ -292,6 +312,9 @@
 
     <!-- Remove after parent 32 (support for jdk 13) -->
     <jacoco.version>0.8.4</jacoco.version>
+
+    <dependency.check.maven.version>5.2.4</dependency.check.maven.version>
+    <dependency.check.maven.failBuildOnCVSS>8</dependency.check.maven.failBuildOnCVSS>
   </properties>
 
   <profiles>
