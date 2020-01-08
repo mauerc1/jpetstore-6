@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-       Copyright 2010-2019 the original author or authors.
+       Copyright 2010-2020 the original author or authors.
 
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License.
@@ -51,11 +51,11 @@
   <distributionManagement>
     <snapshotRepository>
       <id>nexus-snapshots</id>
-      <url>http://nexusip/repository/maven-snapshots/</url>
+      <url>http://172.31.33.204/repository/maven-snapshots/</url>
     </snapshotRepository>
     <repository>
       <id>nexus-releases</id>
-      <url>http://nexusip/repository/maven-releases/</url>
+      <url>http://172.31.33.204/repository/maven-releases/</url>
     </repository>
   </distributionManagement>
 
