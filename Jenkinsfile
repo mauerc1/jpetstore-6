@@ -27,5 +27,15 @@ pipeline {
                 }
             }
         }
+        stage ('Static Analysis') {
+            steps {
+                withSonarQubeEnv('sonarqube-1') {
+                    sh 'mvn sonar:sonar'
+                }
+                timeout(time: 10, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
     }
 }
